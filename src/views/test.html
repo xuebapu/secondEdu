@@ -1,0 +1,297 @@
+<link rel="stylesheet" href="${res}/css/reset.css" />
+<link rel="stylesheet" href="${res}/css/header.css" />
+<link rel="stylesheet" href="${res}/icon/iconfont.css" />
+<link rel="stylesheet" href="${res}/fonts/iconfont.css">
+<link rel="stylesheet" href="${res}/css/jquery.my-message.1.1.css" />
+<link rel="stylesheet" href="${res}/css/style.css">
+
+<script src="${res}/js/jquery-1.12.4.js"></script>
+<script src="${res}/js/crypto-js.js"></script>
+<script src="${res}/js/jquery.my-message.1.1.js"></script>
+<script src="${res}/js/jquery.validate.js"></script>
+<script src="${res}/js/jquery.page.js"></script>
+<script src="${res}/js/chinese.js"></script>
+<script src="${res}/js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="${res}/js/app.js"></script>
+<style>
+.z-page-header .typeArea .conceal {
+	    float: left;
+}
+.top{
+background:#f8f8f8;
+}
+.tips{
+	width: 1440px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+display:flex;
+justify-content: space-between;
+}
+.tips>.leftIntro>a>i{
+	display: inline-block;
+	width:16px;
+	height: 17px;
+}
+.tips>.leftIntro>a{
+	font-size: 14px;
+    margin: 0 13px;
+}
+.tips>.rightName{
+font-size:14px;
+color:#666;
+display: flex;
+justify-content: start;
+}
+.tips>.rightName>.name{
+	margin-right: 70px;
+}
+.tips>.rightName>.co>span{
+	display: inline-block;
+	height:50px;
+	line-height: 50px;
+	vertical-align: top;
+}
+.tips>.rightName>.co>i{
+	display: inline-block;
+	height:50px;
+	width:50px;
+	background: #aaa;
+}
+.secTop{
+background:#06aa71;
+color: #fff;
+}
+.logos{
+display:flex;
+justify-content: space-between;
+width:1440px;
+margin:0 auto;
+height:100px;
+}
+.logos>.leftLogo{
+height:100px;
+}
+.logos>.leftLogo>img{
+height:45px;
+}
+.logos>.rightTips{
+}
+.logos>.rightTips>.item{
+display:inline-block;
+width:120px;
+height:100px;
+}
+#con-t{
+content: "|";
+    display: inline-block;
+    margin: auto 0;
+    color: #999;
+}
+</style>
+<!-- 内页头部start-->
+
+<div class="z-page-header">
+<div class="top">
+  <div class="tips">
+  <div class="leftIntro">
+| <a href="javascript:;"> <i class="t1"></i> 学科定题服务</a>|<a href="javascript:;">  <i class="t2"></i>机构库服务</a>|<a href="javascript:;">  <i class="t3"></i>各类统计分析</a>|
+</div>
+<div class="rightName">
+	<div class="name">欢迎 ${site.name!}</div>
+	<div class="co">
+		<i></i>
+		<span>中华医学会合作伙伴</span>
+	</div>
+</div>
+</div>
+</div>
+<div class="secTop">
+<div class="logos">
+<div class="leftLogo">
+<span class="t1"></span> <span class="t2"></span>
+</div>
+<div class="rightTips">
+  <div class="item">
+   <div class="item-top1">
+ <span ></span>
+</div>
+我的空间
+</div>
+ <div class="item">
+   <div class="item-top2">
+ <span ></span>
+</div>
+帮助中心
+</div>
+  <div class="item">
+   <div class="item-top3">
+ <span ></span>
+</div>
+扫码下载</div>
+<div style="clear:both"></div>
+</div>
+</div>
+
+</div>
+	<div class="z-content z-h50">
+<div id="code"></div>
+  <!--
+		<div class="typeArea">
+			<div class="conceal">
+			<div class="typeface">
+					<span>简体</span>
+					<div class="font-show none">
+						<div class="background pointer">
+							<a>简体</a>
+						</div>
+						<div class="background1 pointer">
+							<a>繁体</a>
+						</div>
+					</div>
+					<i class="iconfont iconfanhui-copy-copy-copy-copy"></i> <i
+						class="iconfont iconfanhui-copy-copy-copy-copy1 none"></i>
+				</div>
+			</div>
+			<div class="function">
+				<i class="search iconfont iconsousuo1 pointer"></i>
+			</div>
+
+			<div class="function">
+				<i class="search iconfont iconsousuo1 pointer"></i>
+
+				<!--<span
+					class="stateUser"></span> -->
+				<!-- <i class="rest iconfont iconwuzhangai pointer"></i> -->
+				<!-- <a href="javascript:ABT.show()"><i class="rest iconfont iconwuzhangai pointer"></i></a> -->
+				<!--<a href="/rss"><i class="network iconfont iconrss-line pointer"></i></a> -->
+			<!--</div>	</div>-->
+
+		<div class="z-navigation">
+			<a href="${base}/"> 首页</a><span id="con-t">|</span>
+			[@cms_channel_list count='7']
+			[#list tag_list as a]
+					 <a [#if (channel??&&channel.id??&&a.id=channel.id) ||
+					((content??&&content.channel.id??&&(a.id=content.channel.id)||(content??&&content.channel.parentId??&&a.id=content.channel.parentId)))]class="on"  [/#if] href="${a.url!}" target="_blank">${a.name!}</a><span id="con-t">|</span>
+			[/#list]
+			[/@cms_channel_list]
+		</div>
+
+	</div>
+
+</div>
+<div class="barrierBed none"></div>
+<div id="goTop" class="pointer">
+	<span>返回<br />顶部
+	</span> <i class="iconfont iconjiantousvg"></i>
+</div>
+<!-- banner区域end-->
+<script>
+                $('.item-top3>span').on('click',function(){
+$('#code').toggle()
+})
+	var linkTag = $('<link rel="icon" type="image/x-icon" href="${site.systemIco}"/>');
+	$($('head')[0]).append(linkTag);
+	function quitLogin() {
+		api.POST('/logout', {}, function(result) {
+			if (result.code === 200) {
+				myMessage.add(result.message, 'success');
+				localStorage.setItem('JEECMS-Auth-Token', '');
+				userLoad()
+				if (window.location.href.indexOf("member-vipcenter") != -1) {
+					location.href = '${base}/login'
+				}
+			} else {
+				myMessage.add(result.message, 'error');
+			}
+		})
+	}
+
+	function userLoad() {
+		$(".stateUser").load("${base}/csi-loginStatus.htm")
+	}
+	userLoad()
+
+	$('.stateUser').on('mouseenter', function() {
+		$('.stateUser ul').stop().slideDown(500);
+	});
+
+	$('.stateUser').on('mouseleave', function() {
+		$('.stateUser ul').stop().slideUp(500);
+	});
+
+	$(function() {
+		if (localStorage.getItem('typeface')
+				&& localStorage.getItem('typeface') == '简体') {
+			$('.typeface>span').text('简体');
+			zh_tran('s')
+		} else if (localStorage.getItem('typeface')
+				&& localStorage.getItem('typeface') == '繁体') {
+			$('.typeface>span').text('繁体');
+			zh_tran('t')
+		} else {
+			$('.typeface>span').text('简体');
+			zh_tran('s')
+		}
+	})
+	$('.typeface .background a').on('click', function() {
+		$('.typeface>span').text('简体');
+		$(this).css('color', '#E30B20');
+		$('.typeface .background1 a').css('color', '#333');
+		localStorage.setItem('typeface', '简体');
+		zh_tran('s')
+	});
+	$('.typeface .background1 a').on('click', function() {
+		$('.typeface>span').text('繁体');
+		$(this).css('color', '#E30B20');
+		$('.typeface .background a').css('color', '#333');
+		localStorage.setItem('typeface', '繁体');
+		zh_tran('t')
+	});
+
+	function upSearch() {
+		var headerKeyword = $('#headerKeyword').val()
+		window.open('${base}/search.htm?keyword=' + headerKeyword);
+	}
+
+	$("#headerKeyword").keypress(function(e) {
+		if (e.which == 13) {
+			var headerKeyword = $('#headerKeyword').val()
+			window.open('${base}/search.htm?keyword=' + headerKeyword);
+		}
+	});
+	//简体繁体切换
+	$('.typeface').on('mouseenter', function() {
+		$('.typeface .iconfanhui-copy-copy-copy-copy').addClass('none');
+		$('.typeface .iconfanhui-copy-copy-copy-copy1').removeClass('none');
+	});
+	$('.typeface').on('mouseleave', function() {
+		$('.typeface .iconfanhui-copy-copy-copy-copy1').addClass('none');
+		$('.typeface .iconfanhui-copy-copy-copy-copy').removeClass('none');
+	});
+	$(function() {
+		/*固定*/
+		var sTop = 0;
+		$(window).scroll(function() {
+			sTop = $(this).scrollTop();
+			if (sTop > 600) {
+				$('#goTop').show()
+			} else {
+				$('#goTop').hide()
+
+			}
+		});
+
+		$('#goTop')
+				.click(
+						function() {
+							$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html')
+									: $('body'))
+									: $('html,body');
+							$body.animate({
+								scrollTop : 0
+							}, 1000);
+						});
+
+	})
+</script>
