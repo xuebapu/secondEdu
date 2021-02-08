@@ -139,7 +139,7 @@
           class="nav-item college"
           :style="{ borderBottom:active==1? '3px solid #49af4f':'3px solid #fff',color:active==1?'#49af4f':' #2D323E'}"
         >
-          直播视频
+          专业研究
           <ul>
             <li v-for="(elem,i) of collegeList" :key="i" @click="gotocollege(elem.id)">{{elem.name}}</li>
           </ul>
@@ -149,7 +149,7 @@
           @click.native="activeC(3)"
           class="nav-item"
           to="/liveList"
-        >专业研究</router-link>
+        >直播视频</router-link>
         <div class="search" v-show="fixed">
           <div>
             <el-dropdown @command="handleCommand1">

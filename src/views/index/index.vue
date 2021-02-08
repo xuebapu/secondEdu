@@ -38,8 +38,8 @@
       </div>
       <div class="section se1">
         <div class="section-title" style="marginBottom:10px">
-          继教项目
-          <span @click="projectMore">跟着项目学习，获取更多实践知识</span>
+          继教学院
+          <span @click="projectMore(0)">学习的乐园，获取更多实践知识</span>
         </div>
         <div class="listName">
           <span
@@ -77,7 +77,7 @@
       <div class="section">
         <div class="section-title">
           入门视频
-          <span @click="projectMore">MORE</span>
+          <span @click="projectMore(2)">MORE</span>
         </div>
         <div class="section-content">
           <div class="course-list">
@@ -104,8 +104,8 @@
       </div>
       <div class="section">
         <div class="section-title">
-          深入研究
-          <span @click="projectMore">名院、名师推荐课程体系，让学习思路更明确</span>
+          知识宝库
+          <span @click="projectMore(2)">名院、名师推荐课程体系，让学习思路更明确</span>
         </div>
         <div class="section-content">
           <div class="course-list">
@@ -744,11 +744,17 @@ export default {
         query: { id: id },
       });
     },
-    projectMore() {
-      sessionStorage.setItem("active", 2);
-      this.$router.push({
-        path: `knowledgeNav/list`,
-      });
+    projectMore(i) {
+      sessionStorage.setItem("active", i);
+      if(i==2){
+        this.$router.push({
+          path: `knowledgeNav/list`,
+        });
+      }else{
+        this.$router.push({
+          path: `college`,
+        });
+      }
     },
     goCourse(item) {
       let id = item.id;
@@ -831,45 +837,45 @@ export default {
       });
     },
   },
-  mounted() {
-    const num = 5;
-    const courseNum = 4;
-    var token = this.$store.getters.token;
-    if (token) {
-      this.showLogin = false;
-      this.$store.dispatch("user/userInfo").then((res) => {
-        console.log(this.$store.getters.userInfo);
-        this.userInfo = res;
-        this.header = res.header;
-      });
-    } else {
-      this.refresh();
-      this.showLogin = true;
-    }
-    newsList(10).then((res) => {
-      this.news = res.data;
-    });
-    bannerList(num).then((res) => {
-      this.banner = res.data;
-    });
-    courseList({ num: courseNum, topNum: 5 }).then((res) => {
-      console.log(res);
-      this.courseType = res.data;
-      this.projectList = this.courseType[0].projectList;
-    });
-    boutiqueList(10).then((res) => {
-      this.boutique = res.data;
-    });
-    collegeRecommend(6).then(res=>{
-      this.collegeRecommendList=res.data
-    })
-    liveIndex({
-      pageNum: 1,
-      pageSize: 5,
-    }).then((res) => {
-      this.liveList = res.data;
-      console.log(this.liveList);
-    });
-  },
+  // mounted() {
+  //   const num = 5;
+  //   const courseNum = 4;
+  //   var token = this.$store.getters.token;
+  //   if (token) {
+  //     this.showLogin = false;
+  //     this.$store.dispatch("user/userInfo").then((res) => {
+  //       console.log(this.$store.getters.userInfo);
+  //       this.userInfo = res;
+  //       this.header = res.header;
+  //     });
+  //   } else {
+  //     this.refresh();
+  //     this.showLogin = true;
+  //   }
+  //   newsList(10).then((res) => {
+  //     this.news = res.data;
+  //   });
+  //   bannerList(num).then((res) => {
+  //     this.banner = res.data;
+  //   });
+  //   courseList({ num: courseNum, topNum: 5 }).then((res) => {
+  //     console.log(res);
+  //     this.courseType = res.data;
+  //     this.projectList = this.courseType[0].projectList;
+  //   });
+  //   boutiqueList(10).then((res) => {
+  //     this.boutique = res.data;
+  //   });
+  //   collegeRecommend(6).then(res=>{
+  //     this.collegeRecommendList=res.data
+  //   })
+  //   liveIndex({
+  //     pageNum: 1,
+  //     pageSize: 5,
+  //   }).then((res) => {
+  //     this.liveList = res.data;
+  //     console.log(this.liveList);
+  //   });
+  // },
 };
 </script>
