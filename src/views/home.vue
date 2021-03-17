@@ -232,7 +232,7 @@
           >{{item.name}}</el-link>
         </div>
         <div class="ft">
-          技术支持 学霸Pu ©2020 puyajun
+          技术支持 学霸Pu ©2021 puyajun
           <br />联系电话：15023809146
         </div>
       </div>

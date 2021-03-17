@@ -20,7 +20,6 @@
     </div>
     <div class="inner-container">
       <div class="section">
-
       </div>
      <div class="ssection">
         <div class="section-title">系统化学习路径</div>
