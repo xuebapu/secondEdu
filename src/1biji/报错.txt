@@ -1,0 +1,275 @@
+1.错误：Cannot read property 'forEach' of undefined
+解决：在遍历前判断
+	if (!this.pro_list) {
+        		return;
+	}
+
+2.错误：Cannot read property ‘push’ of undefined
+this 指代问题； let that = this;
+
+3.echarts  y轴字数
+formatter: function(params) {
+                var newParamsName = "";// 最终拼接成的字符串
+                var paramsNameNumber = params.length;// 实际标签的个数
+                var provideNumber = 6;// 每行能显示的字的个数
+                var rowNumber = Math.ceil(paramsNameNumber / provideNumber);// 换行的话，需要显示几行，向上取整
+                /**
+                 * 判断标签的个数是否大于规定的个数， 如果大于，则进行换行处理 如果不大于，即等于或小于，就返回原标签
+                 */
+                // 条件等同于rowNumber>1
+                if (paramsNameNumber > provideNumber) {
+                  /** 循环每一行,p表示行 */
+                  for (var p = 0; p < rowNumber; p++) {
+                    var tempStr = "";// 表示每一次截取的字符串
+                    var start = p * provideNumber;// 开始截取的位置
+                    var end = start + provideNumber;// 结束截取的位置
+                    // 此处特殊处理最后一行的索引值
+                    if (p === rowNumber - 1) {
+                      // 最后一次不换行
+                      tempStr = params.substring(start, paramsNameNumber);
+                    } else {
+                      // 每一次拼接字符串并换行
+                      tempStr = params.substring(start, end) + "\n";
+                    }
+                    newParamsName += tempStr;// 最终拼成的字符串
+                  }
+                } else {
+                  // 将旧标签的值赋给新标签
+                  newParamsName = params;
+                }
+                // 将最终的字符串返回
+                console.log(newParamsName)
+                return newParamsName
+              },
+
+4.  界面下滑至指定位置：
+	document.getElementById("target").scrollIntoView();
+
+5.大小写转换
+	sn.toUpperCase()//转大
+	sn.toLowerCase()//转小
+
+6.websocket页面渲染数据要写箭头函数
+	ws.onmessage = (evt) => {}
+
+7. 数据接收能输出但不能打点调用都是json字符串要转换成Json对象JSON.parse()
+
+8.报错：vue.min.js:6 SyntaxError: Unexpected token u in JSON at position 0    
+	解决：这个错误是由于JSON.parse解析了undefined   在之前判断
+
+9.再存入localStorage时应该先转成json 字符串。
+
+10.div与img中间有间隙：
+	原因：浏览器有三种模式：1、怪异模式(Quirks)，2、标准模式(Standards)。
+		在这两种标准模式中，行框总是会包含类似字母"j"，"g"尾巴下伸出来的那一部分空间(针对下行字母)，即使行框内并没有任何内容。因此这种情况下你看到的跟父元素底部几个像素的间隙实际上就是为”字母尾巴“预留的。
+		即：.img{
+  			vertical-align: baseline;
+			}
+	解决：1  .div{
+ 		 line-height: 0; // 行高为0
+  		// font-size: 0; // 字号为0
+		}
+	         2  .img{
+ 		 vertical-align: middle; //中线对齐
+ 		 // vertical-align: bottom; // 底线对齐
+  		// vertical-align: top; // 顶线对齐
+		}//推荐
+
+11. TortoisGit   报错：与git 冲突   network改成： D:\git\Git\usr\bin\ssh.exe
+
+12:// 选择button
+actived(i){
+	if(this.activeList.indexOf(i) == -1){
+		this.activeList.push(i);//选中添加到数组里
+		console.log(this.activeList)
+	}else{
+		this.activeList.splice(this.activeList.indexOf(i), 1); //取消
+		console.log(this.activeList)
+	}
+}
+
+13：全选监听
+computed:{
+	// 判断是否全选
+	ischeckAll(){
+		return this.list.length === this.invoiceSelectedList.length;
+	},
+}，
+
+14：监听不到数组直接写函数 this.activeList.indexOf(i) == -1 表示数组中那个没有i 这个值
+ischeckNode(id){
+	return this.invoiceSelectedList.indexOf(id)>-1;
+},
+
+15. uniapp保存    uni.setStorageSync('goodsIdArr',this.invoiceSelectedList);
+
+16： uniapp跳转 
+uni.navigateTo({
+	url:"../invoiceListAdd/invoiceListAdd?id="+obj.id
+})
+
+17: uniapp 延迟跳转
+setTimeout(function(){
+	uni.navigateTo({
+		url:'../invoiceList/invoiceList',
+	})
+},1500)
+
+18：uniapp弹窗
+uni.showToast({
+	title: '申请开票成功',
+	duration: 1500,
+	icon: 'none',
+});
+
+19：微信小程序跳转三方webview网站 传参问题
+解决办法：先encodeURIComponent（url） 后在webview页面decodeURIComponent（url ）
+
+20：返回数据不从新渲染：
+onShow() {
+			this.userInfo={};
+			if(uni.getStorageSync('loginInfo') && this.page == 1){
+				this.getDataUser();
+			}
+		},
+
+21：滑动不生效
+display: inline-block;
+<scroll-view scroll-x="true" style="white-space: nowrap;width: 100%; height: 76rpx;margin: 0 auto;"  >
+	<block v-for="(item,index) in info.base_info" :key="index+item.name">
+		<view class="text-6 text-center text-hidden font-sm" style="line-height: 76rpx;width: 175rpx;margin-right: 20rpx;display: inline-block;" :class="{'activeIndex':tabIndex==index}" @click="changeTabIndex(index)">酒款信息({{ index+1 }})</view>
+	</block>
+</scroll-view>
+
+22：让一个flex元素放在右下角
+align-self:flex-end：放在最低端；margin-left:auto：放在最右边
+<div style="flex: 1;align-self:flex-end">
+         <div style="margin-left:auto" :class=" isBook ? 'bookClass':'noBookClass'" @click="bookWin">
+                     {{isBook?"取消预约":"预约"}}
+          </div>
+</div>
+
+23：监听数据分页拿取
+<view class="d-flex a-center j-center text-light-muted py-3" v-if="list.length">
+			{{loadtext}}
+</view>
+mounted:  window.addEventListener('scroll', this.onContentScroll)
+onContentScroll (e) {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                let clientHeight = document.documentElement.clientHeight;
+                let scrollHeight = document.documentElement.scrollHeight;
+                if (scrollTop + clientHeight >= scrollHeight-2) {
+                    this.loadMore();
+            }
+  },
+
+getData(){
+                let data = {};
+                data.type = 1;
+                data.limit = 15;
+                fetchEncrypt('/api/mall/winesub/lists', '2', JSON.stringify(data), {tips: true}).then(res => {
+                    console.log(res)
+                    this.list = [...this.list,...res.data.list];// 商品列表
+                    this.loadtext = res.data.nowPage==res.data.totalPage? '没有更多了' : '上拉加载更多'
+                    console.log(this.list)
+                }).catch(err => {
+                    console.log(this.list);
+                })
+},
+
+loadMore () {
+                // 是否已经处于加载状态
+                if (this.loadtext !== '上拉加载更多') return;
+                // 改变加载状态
+                this.loadtext = '加载中...'
+                this.page++
+                // 请求数据
+                this.getData()
+  },
+
+24：修改图片大小
+高一定为90
+getImgW(imgc){
+                let img1 = imgc
+                let img = new Image();
+                img.src = img1;
+                let withi = img.width;
+                let heighti = img.height
+                let bi = withi/heighti
+                let newWidth = 90/Number(heighti) * withi;
+                if(heighti > withi){
+                    return  newWidth;
+                }else {
+                    let x = 90*90*bi/newWidth
+                    return x;
+                }
+},
+
+//object-fit: cover;max-width: 100%;max-height: 100%;
+
+25：分享功能
+fig_share(){
+                var uri = encodeURIComponent(window.location.href.split('#')[0]);//获取当前url然后传递给后台获取授权和签名信息
+                let data={};
+                data.url = uri;
+                fetchEncrypt('/user/wechat/getSignPackage', '1', JSON.stringify(data)).then(res => {
+                    console.log(res);
+                    wx.config({
+                        debug: false,  // 是否开启调试模式
+                        appId: res.data.appId,  // appid
+                        nonceStr: res.data.nonceStr,  // 随机字符串
+                        signature: res.data.signature,
+                        timestamp: res.data.timestamp,  // 时间戳
+                        jsApiList: [  // 需要使用的JS接口列表
+                            'onMenuShareTimeline', // 分享到朋友圈接口
+                            'onMenuShareAppMessage', //  分享到朋友接口
+                        ]
+                    });
+                    // 分享的参数:标题、图片地址、描述等
+                    var shareData = {
+                        imgUrl: 'https://h5.wine-talk.cn/web-static/activity/wap/images/2021/0226/linkImge.png', // 分享显示的缩略图地址
+                        link: 'https://h5.wine-talk.cn/web-static/activity/wap/BirthdayLei.html', // 分享地址
+                        desc: '让我们举杯共庆雷司令586岁生日', // 分享描述
+                        title: '酒云网 | 雷司令，生日快乐', // 分享标题
+                        success: function () {},  // 用户确认分享后的回调函数
+                        cancel:function(){}  // 用户取消分享后的回调函数
+                    }
+                    //正式使用
+                    wx.ready(res => {
+                        wx.onMenuShareTimeline(shareData); // 分享到朋友圈
+                        wx.onMenuShareAppMessage(shareData); // 分享给好友
+                    })
+                }).catch(err => {
+                    console.log(err);
+                })
+            },
+
+26：目录结构
+./: 当前目录下
+../: 父级目录
+
+27.元素居中：
+flex: 1;text-align: center;align-items: auto;
+
+#块级元素垂直居中
+子：position: absolute;
+top: 50%;
+transform: translateY(-50%);
+即可实现块级元素垂直居中，但是需要注意的是，需要将这个块级元素的父级元素
+父：position:relative;
+
+# 块级元素垂直水平居中
+子：position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%);
+即可，同样需要将这个块级元素的父级元素的
+父：position:relative;
+
+28：判断是否在app打开页面
+let isApp = window.location.href.indexOf('app=1'); isApp >-1 为app
+
+29：vue检测不到数组
+// Vue.set
+this.$set(this.orderInfo, index, res.list[0].goods_name) 第一个数为数组，第二为下标，第三为新值
+

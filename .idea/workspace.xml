@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb5581ce-eff5-48b2-86a9-b851772ff431" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/1biji/报错.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/25389debfee5dbd38ce66fa0755ba1ef.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/25389debfee5dbd38ce66fa0755ba1ef.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/98cc242a2123ebaf74e8433415789237.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/98cc242a2123ebaf74e8433415789237.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3af58cd33e3388a86bf5ad8acef5b3e1.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/3af58cd33e3388a86bf5ad8acef5b3e1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/5be8ac1a864ee2f54a4b593fa78508f6.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/5be8ac1a864ee2f54a4b593fa78508f6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6032e022ebb621bffc22d70d45a5eb79.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6032e022ebb621bffc22d70d45a5eb79.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/68df8d50060ef32a82f2b489d19a0e98.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/68df8d50060ef32a82f2b489d19a0e98.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7cedc15396762e00940ff34aff1a3bb4.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7cedc15396762e00940ff34aff1a3bb4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7fe0c92c964720949ca3514165cd1d5c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7fe0c92c964720949ca3514165cd1d5c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/aa945fe3175e97e4e2da1ed86f24aedd.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/aa945fe3175e97e4e2da1ed86f24aedd.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ac79811dc4b50922fe6493dd58c3260f.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/ac79811dc4b50922fe6493dd58c3260f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b10a5e16d8941c217d42ec7c555b1c15.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b10a5e16d8941c217d42ec7c555b1c15.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cd80f66b62cc9d6dfa99ca422cb21cfa.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/cd80f66b62cc9d6dfa99ca422cb21cfa.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dd0afd474ca5800f1a578b2744d9dd16.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dd0afd474ca5800f1a578b2744d9dd16.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e8455dad59ae614181082f0cfd27d028.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e8455dad59ae614181082f0cfd27d028.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/1biji" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,6 +31,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\webStromAllSpace\secondEdu\src\1biji" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,10 +51,23 @@
       <workItem from="1613707862364" duration="56000" />
       <workItem from="1614764921960" duration="706000" />
       <workItem from="1615961895019" duration="2727000" />
+      <workItem from="1615973243022" duration="2043000" />
+      <workItem from="1616031031509" duration="364000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
